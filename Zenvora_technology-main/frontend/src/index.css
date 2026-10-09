@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, [data-theme="royal-brown"] {
+    --font-geist: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+
+    --color-background: 248 251 255;
+    --color-secondary: 255 255 255;
+    --color-card: 255 255 255;
+    --color-primary: 14 165 233;
+    --color-accent: 99 102 241;
+    --color-accent-light: 165 180 252;
+    --color-cyan: 20 184 166;
+    --color-deep: 15 23 42;
+    --color-dark: 30 41 59;
+    --color-light: 56 189 248;
+    --color-beige: 241 245 249;
+    --color-text: 15 23 42;
+    --color-muted: 100 116 139;
+    --color-success: 16 185 129;
+    --color-warning: 245 158 11;
+    --color-danger: 225 29 72;
+  }
+
+  [data-theme="royal-blue"] {
+    --color-background: 240 249 255;
+    --color-secondary: 255 255 255;
+    --color-card: 255 255 255;
+    --color-primary: 2 132 199;
+    --color-accent: 79 70 229;
+    --color-accent-light: 199 210 254;
+    --color-cyan: 13 148 136;
+    --color-deep: 15 23 42;
+    --color-dark: 30 41 59;
+    --color-light: 14 165 233;
+    --color-beige: 224 242 254;
+    --color-text: 15 23 42;
+    --color-muted: 71 85 105;
+    --color-success: 16 185 129;
+    --color-warning: 245 158 11;
+    --color-danger: 225 29 72;
+  }
+
+  body {
+    background-color: #f8fbff;
+    color: #0f172a;
+    font-family: var(--font-open-sans), var(--font-geist), 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-roboto), var(--font-geist), sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Custom Infotact Typography Classes */
+.roboto-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.roboto-semibold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
+.open-sans-semibold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.open-sans-slight {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(224, 242, 254, 0.8);
+}
+
+.glass-glow {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(186, 230, 253, 0.8);
+  box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.15);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(224, 242, 254, 0.8);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Subtle Glowing Background Grid */
+.bg-grid-overlay {
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-radial-accent {
+  background-image: 
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.2), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.16), transparent 32%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
